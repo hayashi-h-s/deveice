@@ -7,3 +7,17 @@
 <% end %>
 <%= link_to "ユーザー一覧へ", users_path %>
 <%= link_to "ホームへ戻る", posts_path %>
+
+<% @follows.each do |follow| %>
+  <%= follow.email %>
+  <hr>
+<% end %>
+
+  <hr>
+
+フォロー
+<% @followers.each do |follower| %>
+  <%= link_to follower.email, user_path(follower) %>
+  <hr>
+<% end %>
+
